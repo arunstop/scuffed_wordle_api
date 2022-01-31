@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
 const app: Application = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Body parsing Middleware
 app.use(express.json());
