@@ -6,10 +6,9 @@
   "scripts": {
     "test": "npm test",
     "clean": "rimraf ./dist/",
-    "copysrc": "copyfiles ./src/**/*.* ./dist/",
     "deletets": "rimraf ./dist/**/*.ts",
     "dev": "ts-node-dev ./src/app.ts",
-    "build": "npm run clean && tsc && npm run copysrc",
+    "build": "copyfiles -u 1 ./src/**/*.* ./dist/",
     "start": "node ./dist/app.js"
   },
   "engines": {
