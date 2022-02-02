@@ -5,11 +5,15 @@
   "main": "./src/app.ts",
   "scripts": {
     "test": "npm test",
-    "clean": "rimraf ./dist/",
-    "copysrc": "copyfiles -u 1 ./src/**/*.* ./dist/",
-    "deletets": "rimraf ./dist/**/*.ts",
-    "dev": "ts-node-dev ./src/app.ts",
+    "clean:dev": "rimraf ./dist/",
+    "clean": "rm -rf ./dist/",
+    "copysrc:dev": "copyfiles -u 1 ./src/**/*.* ./dist/",
+    "copysrc": "cp -a ./src/. ./dist",
+    "deletets:dev": "rimraf ./dist/**/*.ts",
+    "deletets": "find ./dist -name '*.ts' -type f -delete",
+    "build:dev": "npm run clean:dev && tsc && npm run copysrc:dev && npm run deletets:dev",
     "build": "npm run clean && tsc && npm run copysrc && npm run deletets",
+    "dev": "ts-node-dev ./src/app.ts",
     "start": "node ./dist/app.js"
   },
   "engines": {
@@ -42,8 +46,6 @@
     "express": "^4.17.2",
     "http-errors": "^2.0.0",
     "jade": "^1.11.0",
-    "morgan": "^1.10.0",
-    "copyfiles": "^2.4.1",
-    "rimraf": "^3.0.2"
+    "morgan": "^1.10.0"
   }
 }
