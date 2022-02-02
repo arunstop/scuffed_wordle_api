@@ -7,13 +7,13 @@
     "test": "npm test",
     "clean:dev": "rimraf ./dist/",
     "clean": "rm -rf ./dist/",
-    "copysrc:dev": "copyfiles -u 1 ./src/**/*.* ./dist/",
-    "copysrc": "cp -a ./src/. ./dist",
-    "deletets:dev": "rimraf ./dist/**/*.ts",
-    "deletets": "find ./dist -name '*.ts' -type f -delete",
-    "build:dev": "npm run clean:dev && tsc && npm run copysrc:dev && npm run deletets:dev",
-    "build": "npm run clean && tsc && npm run copysrc && npm run deletets",
-    "dev": "ts-node-dev ./src/app.ts",
+    "copy-src:dev": "copyfiles -u 1 ./src/**/*.* ./dist/",
+    "copy-src": "cp -a ./src/. ./dist",
+    "delete-ts:dev": "rimraf ./dist/**/*.ts",
+    "delete-ts": "find ./dist -name '*.ts' -type f -delete",
+    "build:dev": "npm run clean:dev && tsc && npm run copy-src:dev && npm run delete-ts:dev",
+    "build": "npm run clean && tsc && npm run copy-src && npm run delete-ts",
+    "start:dev": "ts-node-dev ./src/app.ts",
     "start": "node ./dist/app.js"
   },
   "engines": {
@@ -37,7 +37,9 @@
     "@types/morgan": "^1.9.3",
     "@types/node": "^17.0.13",
     "ts-node-dev": "^1.1.8",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "cookie-parser": "^1.4.6",
