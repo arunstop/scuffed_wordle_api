@@ -2,14 +2,15 @@
   "name": "scuffed_wordle_api",
   "version": "1.0.0",
   "description": "Scuffed Wordle API using ExpressJS and Typescript",
-  "main": "./src/app.ts",
+  "main": "src/app.ts",
   "scripts": {
     "test": "npm test",
-    "clean": "rimraf ./dist/",
-    "deletets": "rimraf ./dist/**/*.ts",
-    "dev": "ts-node-dev ./src/app.ts",
-    "build": "copyfiles -u 1 ./src/**/*.* ./dist/",
-    "start": "node ./dist/app.js"
+    "clean": "rimraf dist/",
+    "copysrc": "copyfiles -u 1 src/**/*.* dist/",
+    "deletets": "rimraf dist/**/*.ts",
+    "dev": "ts-node-dev src/app.ts",
+    "build": "npm run clean && tsc && npm run copysrc && npm run deletets",
+    "start": "node dist/app.js"
   },
   "engines": {
     "node": "^14.17.6"
