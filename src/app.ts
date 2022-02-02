@@ -22,9 +22,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use("/", require('./routes/index.ts'));
-app.use("/words", require('./routes/words.ts'));
-app.use("/dictionary", require('./routes/dictionary.ts'));
+app.use("/", require('./routes/index'));
+app.use("/words", require('./routes/words'));
+app.use("/dictionary", require('./routes/dictionary'));
 
 // catch 404 and forward to error handler
 app.use(function (req: any, res: any, next: any) {

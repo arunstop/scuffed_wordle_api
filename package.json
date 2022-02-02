@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm test",
     "dev": "ts-node-dev ./src/app.ts",
-    "start": "ts-node ./src/app.ts"
+    "build": "tsc",
+    "start": "node ./dist/app.js"
   },
   "engines": {
     "node": "^14.17.6"
@@ -22,23 +23,23 @@
   },
   "homepage": "https://github.com/arunstop/scuffed_wordle_api#readme",
   "devDependencies": {
-    "ts-node-dev": "^1.1.8"
-  },
-  "dependencies": {
+    "typescript": "^4.5.5",
+    "ts-node-dev": "^1.1.8",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/http-errors": "^1.8.2",
     "@types/morgan": "^1.9.3",
-    "@types/node": "^17.0.13",
+    "@types/node": "^17.0.13"
+
+  },
+  "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "debug": "^4.3.3",
     "express": "^4.17.2",
     "http-errors": "^2.0.0",
     "jade": "^1.11.0",
-    "morgan": "^1.10.0",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.5"
+    "morgan": "^1.10.0"
   }
 }
