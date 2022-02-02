@@ -5,9 +5,9 @@
   "main": "./src/app.ts",
   "scripts": {
     "test": "npm test",
-    "clean": "rm rf ./dist/",
+    "clean": "rm -rf ./dist/",
     "copysrc": "cp -a ./src/. ./dist",
-    "deletets": "rm rf ./dist/**/*.ts",
+    "deletets": "rm -rf ./dist/**/*.ts",
     "dev": "ts-node-dev ./src/app.ts",
     "build": "npm run clean && npm run copysrc && npm run deletets",
     "start": "node ./dist/app.js"
