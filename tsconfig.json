@@ -100,7 +100,7 @@
     },
     "include": [
       "src/**/*.ts",
-      "src/**/*.jade",
+      "src/**/*.*",
       // "spec/**/*.ts"
     ],
     "exclude": [
