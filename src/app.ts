@@ -11,7 +11,7 @@ const app: Application = express();
 const port = process.env.PORT || 3000;
 
 // Connect to mongodb
-mongodb.connect();
+// mongodb.connect();
 
 // Body parsing Middleware
 app.use(express.json());
