@@ -4,9 +4,14 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import cors from 'cors';
+import mongoose from "mongoose";
+import mongodb from './config/mongodb';
 
 const app: Application = express();
 const port = process.env.PORT || 3000;
+
+// Connect to mongodb
+mongodb.connect();
 
 // Body parsing Middleware
 app.use(express.json());
@@ -43,6 +48,9 @@ app.use(function (err: HttpError, req: Request, res: Response, next: NextFunctio
 });
 
 try {
+  mongoose.connection.once('open', () => {
+    console.log("Connected to MongoDB");
+  });
   app.listen(port, (): void => {
     console.log(`Connected successfully on port ${port}`);
   });

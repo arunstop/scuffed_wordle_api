@@ -45,9 +45,11 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "debug": "^4.3.3",
+    "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "http-errors": "^2.0.0",
     "jade": "^1.11.0",
+    "mongoose": "^6.2.0",
     "morgan": "^1.10.0"
   }
 }

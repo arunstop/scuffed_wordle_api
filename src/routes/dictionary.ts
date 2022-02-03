@@ -3,10 +3,11 @@ import { Application, NextFunction, Request, Response, Router } from "express";
 /* GET users listing. */
 module.exports = Router().get('/', function (req: Request, res: Response, next: NextFunction) {
     let errorMsg: Array<String> = [];
-    if (!req.query.length) {
+    const {length,difficulty} = req.query;
+    if (!length) {
         errorMsg.push("[`length` is required] Need to specify word length");
     }
-    if (!req.query.difficulty) {
+    if (!difficulty) {
         errorMsg.push("[`difficulty` is required] Need to choose difficulty");
     }
     if (errorMsg.length > 0) {
@@ -17,7 +18,7 @@ module.exports = Router().get('/', function (req: Request, res: Response, next: 
     }
     // const englishWordList: Array<String> = require('../public/assets/AllEngWords.json');
     const allWordList: Array<String> = require('../public/assets/BBC35kWordList.json');
-    const letterCount: number = Number(req.query.length);
+    const letterCount: number = Number(length);
     const wordList = [...allWordList.filter((val: String) => val.length == letterCount)];
     const answer = wordList[Math.round(Math.random() * wordList.length)];
     return res.status(200).json({
