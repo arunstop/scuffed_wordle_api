@@ -64,7 +64,7 @@ module.exports = Router().get('/', function (req: Request, res: Response, next: 
         "wordsCount": targetWordList.length,
         "answer": answer,
         // "validWords": validWords,
-        "words": targetWordList,
+        "words": englishWordListByLength,
     })
 });
 
