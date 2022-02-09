@@ -63,8 +63,9 @@ module.exports = Router().get('/', function (req: Request, res: Response, next: 
         "difficulty": difficulty as string,
         "wordsCount": targetWordList.length,
         "answer": answer,
+        "answerList": targetWordList,
         // "validWords": validWords,
-        "words": englishWordListByLength,
+        "wordList": englishWordListByLength,
     })
 });
 
