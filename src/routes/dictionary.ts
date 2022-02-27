@@ -11,8 +11,8 @@ module.exports = Router().get('/', function (req: Request, res: Response, next: 
         errorMsgs.push("[`length` is required] Cannot be empty");
     }
     // limit length between 4-9
-    else if (typeof length == "number" || Number(length) < 4 || Number(length) > 9) {
-        errorMsgs.push("[`length` is invalid] Must be between 4 to 9");
+    else if (typeof length == "number" || Number(length) < 4 || Number(length) > 13) {
+        errorMsgs.push("[`length` is invalid] Must be between 4 to 12");
     }
     // check if difficulty is valid
     if (!difficulty || !DIFFICULTIES.includes(difficulty.toString().toUpperCase())) {
