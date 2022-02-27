@@ -1,5 +1,5 @@
 import { Application, NextFunction, Request, Response, Router } from "express";
-import _ from'lodash';
+import _ from 'lodash';
 
 // DIFFICULTIES
 const DIFFICULTIES: Array<string> = ["EASY", "NORMAL", "HARD"];
@@ -33,15 +33,15 @@ module.exports = Router().get('/', function (req: Request, res: Response, next: 
 
         const easy: Array<string> = require('../public/assets/easy-oxford5000.json');
         if (diffy.toUpperCase() == 'EASY') {
-            return easy;
+            return easy.filter(e => !e.includes(" "));
         }
         const normal: Array<string> = require('../public/assets/normal-oxford-google.json');
         if (diffy.toUpperCase() == 'NORMAL') {
-            return normal;
+            return normal.filter(e => !e.includes(" "));
         }
         const hard: Array<string> = require('../public/assets/hard-oxford-google-bbc.json');
         if (diffy.toUpperCase() == 'HARD') {
-            return hard;
+            return hard.filter(e => !e.includes(" "));
         }
         return easy;
 
