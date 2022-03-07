@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+            "type": "shell",
+            "command": "git",
+            "args": [
+                "push",
+                "heroku",
+                "main",
+            ],
+            "group": "build",
+            "label": "Heroku: push main",
+            "detail": ""
+        }
+	]
+}
