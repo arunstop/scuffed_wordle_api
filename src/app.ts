@@ -4,11 +4,11 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import cors from 'cors';
-import mongoose from "mongoose";
-import mongodb from './config/mongodb';
+// import mongoose from "mongoose";
+// import mongodb from './config/mongodb';
 
 const app: Application = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Connect to mongodb
 // mongodb.connect();
@@ -48,12 +48,14 @@ app.use(function (err: HttpError, req: Request, res: Response, next: NextFunctio
 });
 
 try {
-  mongoose.connection.once('open', () => {
-    console.log("Connected to MongoDB");
-  });
+//   mongoose.connection.once('open', () => {
+//     console.log("Connected to MongoDB");
+//   });
   app.listen(port, (): void => {
     console.log(`Connected successfully on port ${port}`);
   });
 } catch (error: any) {
   console.error(`Error occured: ${error.message}`);
 }
+
+export default app;
