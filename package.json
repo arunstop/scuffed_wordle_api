@@ -14,7 +14,8 @@
     "build:dev": "npm run clean:dev && tsc && npm run copy-src:dev && npm run delete-ts:dev",
     "build": "npm run clean && tsc && npm run copy-src && npm run delete-ts",
     "start:dev": "ts-node-dev ./src/app.ts",
-    "start": "node ./dist/app.js"
+    "start": "node ./dist/app.js",
+	"vercel-build": "echo 'Skipping npm build, for some reason, it works this way'"
   },
   "engines": {
     "node": "^20.1.0"
