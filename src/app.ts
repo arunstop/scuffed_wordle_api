@@ -2,7 +2,7 @@ import express, { Application, NextFunction, Request, Response } from "express";
 import createError, { HttpError } from 'http-errors';
 import path from 'path';
 import cookieParser from 'cookie-parser';
-import logger from 'morgan';
+// import logger from 'morgan';
 import cors from 'cors';
 // import mongoose from "mongoose";
 // import mongodb from './config/mongodb';
@@ -17,11 +17,11 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
 
 app.use(cors());
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
